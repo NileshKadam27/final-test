@@ -1,0 +1,42 @@
+<h1>Welcome at Hotel Management portal</h1>
+<div class="filter">
+    <p>Search by filter</p>
+    <i (click)="onfilterForm()" class="fa fa-filter" aria-hidden="true"></i>
+</div>
+
+@if(isFilterOn){
+    <div class="form" [formGroup]="filterGroup">
+        <input type="text" placeholder="city" [formControl]="city">
+        <input type="text" placeholder="rating" [formControl]="rating">
+        <button (click)="fetchFilterData()">submit</button>
+    </div>
+}
+<div class="container">
+
+
+        @for(hotel of hotelList; track hotel.id){
+            <div class="hotel">
+                <img class="img" src={{hotel.imageurl}} alt="">
+                <p>{{hotel.name}}</p>
+                <p>City:{{hotel.city}}</p>
+                 <p>Rating:{{hotel.rating}}</p>
+                 <p>price:${{hotel.roomprice}}</p>
+                 @if(hotel.wifi=='yes'){
+                    <i class="fa fa-wifi" aria-hidden="true"></i>
+                 }
+                 @if(hotel.pool=='yes'){
+                    <i class="fa-solid fa-person-swimming"></i>
+                 }
+
+                 @if(hotel.gym=='yes'){
+                    <i class="fa-solid fa-dumbbell"></i>
+                 }
+            
+            
+
+            </div>
+        }
+     
+
+
+</div>

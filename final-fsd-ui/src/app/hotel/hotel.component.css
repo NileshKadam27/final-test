@@ -1,0 +1,44 @@
+
+h1{
+    text-align: center;
+}
+.container{
+
+    width: 100%;
+    display: flex;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    padding-left: 70px;
+    row-gap: 10px;
+}
+.hotel{
+
+    width: 40%;
+    background-color: grey;
+    padding: 10px;
+    
+}
+
+.img{
+    width: 100%;
+}
+
+.filter{
+    padding: 48px;
+    display: flex;
+    column-gap: 10px;
+}
+
+.form{
+    
+    width: 40%;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+    padding-left: 10px;
+    background-color: grey;
+}
+
+i{
+    padding: 4px;
+}

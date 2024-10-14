@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+
+  backend:
+    build:
+      context: fsd
+    container_name: final-fsd-backend-cont
+    ports:
+      - "8081:8080"
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: final-fsd-ui
+    container_name: angular-app-cont
+    ports:
+      - "4200:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
